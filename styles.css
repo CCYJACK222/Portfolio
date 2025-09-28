@@ -1,29 +1,37 @@
 :root {
-    --text-color: #1a1c20;
+    /* Global variables to use */
+    --text-color: #191919;
     --link-color: #4a76ee;
-    --background-color: #ffffff;
+    --background-color: #f4f1e8;
 }
 
 * {
+    /* Default settings for all elements */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
+
 html {
     scroll-behavior: smooth;
 }
 
+
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Radley', sans-serif;
     background-color: var(--background-color);
 }
 
 a {
     color: var(--link-color);
     text-decoration: none;
-
 }
+
+
+
+
 
 /* NAVBAR */
 nav {
