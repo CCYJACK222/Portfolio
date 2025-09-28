@@ -26,7 +26,7 @@ body {
 
 a {
     color: var(--link-color);
-    text-decoration: none;
+    text-decoration: none; /*this one hid the underline below the links */
 }
 
 
