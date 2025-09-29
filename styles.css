@@ -1,6 +1,6 @@
 :root {
     /* Global variables to use */
-    --text-color: #191919;
+    --text-color: #000000;
     --link-color: #4a76ee;
     --background-color: #f4f1e8;
 }
@@ -45,30 +45,26 @@ nav {
 
 nav .left a {
     color: var(--text-color);
-    font-size: 22px;
-    font-weight: 600;
+    font-size: 25px;
+    font-weight: 400;
+    font-style: italic;
 }
 
 nav .right a {
     color: var(--text-color);
     margin: 0 10px;
+    font-size: 21px;
+    font-style: italic;
 }
 
-nav .right a:last-child {
-    color: var(--background-color);
-    background-color: var(--text-color);
-    padding: 5px 15px;
-    border-radius: 5px;
-}
-
-nav .right a span {
+nav .right a span { /* space between icon and text */
     margin-left: 5px;
 }
 
 /* SECTION 1: Hero */
 .hero-section {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 0 50px;
     margin: 50px 0;
@@ -78,10 +74,23 @@ nav .right a span {
 
 .hero-section .text {
     flex: 5;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+
 }
 
-.hero-section .text h2 {
-    font-size: 45px;
+.hero-section .text h1 {
+    font-size: 75px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.hero-section .text span {
+    font-size: 75px;
+    font-weight: 400;
+    font-style: normal;
+    color: #9b4819
 }
 
 .hero-section .text .links {
@@ -103,15 +112,22 @@ nav .right a span {
     color: var(--text-color);
 }
 
+
+
 .hero-section .headshot {
-    flex: 2;
+    flex: 5;
     display: flex;
-    justify-content: right;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero-section .headshot img {
     width: 300px;
-    border-radius: 50%;;
+    height: 300px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+
 }
 
 @media (max-width: 850px) {
@@ -133,7 +149,7 @@ nav .right a span {
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 600px) { /* MOBILE VIEWPORT */
     /* NAVBAR */
     nav {
         padding: 0 20px;
