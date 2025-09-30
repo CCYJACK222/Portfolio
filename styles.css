@@ -3,6 +3,7 @@
     --text-color: #000000;
     --link-color: #4a76ee;
     --background-color: #f4f1e8;
+    --special-color: #674730;
 }
 
 * {
@@ -41,6 +42,7 @@ nav {
     
     padding: 0 50px;
     height: 80px;
+    background-color: var(--background-color);
 }
 
 nav .left a {
@@ -64,26 +66,29 @@ nav .right a span { /* space between icon and text */
 /* SECTION 1: Hero */
 .hero-section {
     display: flex;
+    flex-direction: column;
+    text-align: center;
     justify-content: center;
     align-items: center;
     padding: 0 50px;
     margin: 50px 0;
     margin-bottom: 100px;
     gap: 40px;
+    background-color: var(--background-color);
 }
 
 .hero-section .text {
-    flex: 5;
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
-
+    margin-top: 20px;
 }
 
 .hero-section .text h1 {
     font-size: 75px;
     font-weight: 400;
     font-style: italic;
+
 }
 
 .hero-section .text span {
@@ -115,20 +120,68 @@ nav .right a span { /* space between icon and text */
 
 
 .hero-section .headshot {
-    flex: 5;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 6px solid #fff;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 auto;
 }
 
 .hero-section .headshot img {
-    width: 300px;
-    height: 300px;
+    width: 250%;
+    height: 80%;
     border-radius: 50%;
-    background-size: cover;
-    background-position: center;
-
+    transition: .5s ease;
+    cursor: pointer;
+    object-fit: contain;
+    scale: 3;
+    transform: translateX(-3%) translateY(10%);
 }
+
+.hero-section .headshot img:hover {
+    border-color: #008bf8;
+    box-shadow: 0 4px 18px 0 rgba(0,0,0,0.25);
+}
+
+/* SECTION 2: About Me */
+#about {
+    background-color: var(--special-color);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    margin: 50px 0;
+    margin-bottom: 100px;
+    gap: 30px;
+}
+
+#about h2 {
+    font-size: 50px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+#about .text {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#about .text p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--text-color);
+    text-align: justify;
+}
+
+
 
 @media (max-width: 850px) {
     /* SECTION 1: Hero */
