@@ -147,6 +147,8 @@ nav .right a span { /* space between icon and text */
     box-shadow: 0 4px 18px 0 rgba(0,0,0,0.25);
 }
 
+
+
 /* SECTION 2: About Me */
 #about {
     background-color: var(--special-color);
@@ -158,28 +160,82 @@ nav .right a span { /* space between icon and text */
     padding: 50px;
     margin: 50px 0;
     margin-bottom: 100px;
-    gap: 30px;
+    gap: 80px;
 }
 
 #about h2 {
-    font-size: 50px;
+    font-size: 68px;
     font-weight: 400;
-    font-style: italic;
+    font-style: normal;
     color: var(--text-color);
-    margin-bottom: 20px;
+    margin-bottom: 0px;
+    position: relative;
+    left: -225px;
+    top: 30px;
+    color: #fcf5e7;
 }
 
 #about .text {
-    max-width: 800px;
+    max-width: 1250px;
     margin: 0 auto;
 }
 
 #about .text p {
-    font-size: 18px;
+    font-size: 26px;
     line-height: 1.6;
     color: var(--text-color);
-    text-align: justify;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 50px;
+    color: #fcf5e7;
+    margin-right: 200px;
 }
+
+#about .full-picture {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+}
+
+#about .full-picture img {
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
+    clip-path: inset(75px 50px 0px 50px); /* top, right, bottom, left */
+    scale: 1.9;
+    transform: translateY(-20%);
+    box-shadow: 0 4px 18px 0 rgba(0,0,0,0.25);
+}
+
+
+
+/* SECTION 3: Background */
+
+#background {
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    margin: 50px 0;
+    margin-bottom: 100px;
+    gap: 80px;
+}
+
+#background h2 {
+    font-size: 65px;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    margin-top: -80px;
+    color: #9b4819;
+}
+
+
 
 
 
