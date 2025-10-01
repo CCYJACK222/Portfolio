@@ -181,7 +181,7 @@ nav .right a span { /* space between icon and text */
 }
 
 #about .text p {
-    font-size: 26px;
+    font-size: 24px;
     line-height: 1.6;
     color: var(--text-color);
     text-align: center;
@@ -203,7 +203,7 @@ nav .right a span { /* space between icon and text */
     height: 300px;
     object-fit: cover;
     clip-path: inset(75px 50px 0px 50px); /* top, right, bottom, left */
-    scale: 1.9;
+    scale: 2.5;
     transform: translateY(-20%);
     box-shadow: 0 4px 18px 0 rgba(0,0,0,0.25);
 }
@@ -235,8 +235,45 @@ nav .right a span { /* space between icon and text */
     color: #9b4819;
 }
 
+#background .picture_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    max-width: 2000px;
+    margin: 0 auto; /* Center the container. Important */
+}
 
+#background .picture_container img {
+    width: 50%;
+    height: auto;
+    max-width: 500px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
 
+#background .picture_container .Sacred-heart-background-images {
+    clip-path: inset(50px 50px 0px 50px); /* top, right, bottom, left */
+    scale: 1.8;
+    transform: translateY(-10%);
+}
+
+#background .picture_container .Jack-Welch-background-images {
+    scale: 2.3;
+    transform: translateY(-10%);
+}
+
+#background .picture_container .NCAA-background-images {
+    clip-path: inset(0px 50px 0px 50px); /* top, right, bottom, left */
+    scale: 1;
+    transform: translateY(-5%);
+}
+
+#background .picture_container img:hover {
+    transform: scale(1.05);
+    transition: .3s ease-in-out;
+}   
 
 
 @media (max-width: 850px) {
