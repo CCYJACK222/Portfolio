@@ -9,49 +9,8 @@
 * {
     /* Default settings for all elements */
     margin: 0;
-    pa#background .picture_container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    max-width: 2000px;
-    margin: 0 auto; /* Center the container. Important */
-}
-
-#background .picture_container > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 10px;
-}
-
-#background .picture_container img {
-    width: 50%;
-    height: auto;
-    max-width: 500px;
-    object-fit: cover;
-    display: block;
-    margin: 0 auto;
-}
-
-#background .picture_container span {
-    font-size: 18px;
-    font-weight: bold;
-    color: var(--text-color);
-    margin-top: 10px;
-}
-
-#background .picture_container p {
-    font-size: 14px;
-    color: var(--text-color);
-    margin-top: 5px;
-}
-
-#background .picture_container p span {
-    font-weight: normal;
-    font-style: italic;
-}x-sizing: border-box;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 
@@ -290,29 +249,39 @@ nav .right a span { /* space between icon and text */
     margin: 0 auto; /* Center the container. Important */
 }
 
+#background .picture_container > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
 #background .picture_container img {
-    width: 50%;
-    height: auto;
-    max-width: 500px;
-    object-fit: cover;
+    width: 300px;
+    height: 200px;
+    object-fit: contain;
     display: block;
     margin: 0 auto;
+    background-color: transparent;
 }
 
-#background .picture_container .Sacred-heart-background-images {
-    clip-path: inset(50px 50px 0px 50px); /* top, right, bottom, left */
-    scale: 1.8;
-    transform: translateY(-10%);
+#background .picture_container .Sacred-heart-background-images img {
+    width: 300px;
+    height: 200px;
+    object-fit: contain;
 }
 
-#background .picture_container .Jack-Welch-background-images {
-    scale: 2.3;
-    transform: translateY(-10%);
+#background .picture_container .Jack-Welch-background-images img {
+    width: 300px;
+    height: 200px;
+    object-fit: contain;
 }
 
-#background .picture_container .NCAA-background-images {
-    scale: 0.85;
-    transform: translateY(-20%);
+#background .picture_container .NCAA-background-images img {
+    width: 300px;
+    height: 200px;
+    object-fit: contain;
 }
 
 #background .picture_container img:hover {
@@ -325,6 +294,17 @@ nav .right a span { /* space between icon and text */
     color: var(--text-color);
     display: block;
     margin-top: 10px;
+    font-style: italic;
+}
+
+#background .picture_container p {
+    font-size: 14px;
+    color: var(--text-color);
+    margin-top: 5px;
+}
+
+#background .picture_container p span {
+    font-weight: normal;
     font-style: italic;
 }
 
