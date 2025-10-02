@@ -9,8 +9,49 @@
 * {
     /* Default settings for all elements */
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    pa#background .picture_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 2000px;
+    margin: 0 auto; /* Center the container. Important */
+}
+
+#background .picture_container > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+#background .picture_container img {
+    width: 50%;
+    height: auto;
+    max-width: 500px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
+#background .picture_container span {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-top: 10px;
+}
+
+#background .picture_container p {
+    font-size: 14px;
+    color: var(--text-color);
+    margin-top: 5px;
+}
+
+#background .picture_container p span {
+    font-weight: normal;
+    font-style: italic;
+}x-sizing: border-box;
 }
 
 
@@ -149,6 +190,8 @@ nav .right a span { /* space between icon and text */
 
 
 
+
+
 /* SECTION 2: About Me */
 #about {
     background-color: var(--special-color);
@@ -210,6 +253,9 @@ nav .right a span { /* space between icon and text */
 
 
 
+
+
+
 /* SECTION 3: Background */
 
 #background {
@@ -265,15 +311,37 @@ nav .right a span { /* space between icon and text */
 }
 
 #background .picture_container .NCAA-background-images {
-    clip-path: inset(0px 50px 0px 50px); /* top, right, bottom, left */
-    scale: 1;
-    transform: translateY(-5%);
+    scale: 0.85;
+    transform: translateY(-20%);
 }
 
 #background .picture_container img:hover {
     transform: scale(1.05);
     transition: .3s ease-in-out;
 }   
+
+#background .picture_container span {
+    font-size: 18px;
+    color: var(--text-color);
+    display: block;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+#background .picture_container .Title {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--text-color);
+    text-align: center;
+    display: block;
+    margin: 15px auto 10px auto;
+    font-style: normal;
+}
+
+
+
+
+
 
 
 @media (max-width: 850px) {
