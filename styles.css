@@ -312,7 +312,7 @@ nav .right a span { /* space between icon and text */
 #background .picture_container_3 p {
     font-size: 14px;
     color: var(--text-color);
-    margin-top: -5px;
+    margin-top: -15px;
 }
 
 #background .picture_container_1 p span,
