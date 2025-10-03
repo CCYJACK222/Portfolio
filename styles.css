@@ -398,8 +398,7 @@ nav .right a span { /* space between icon and text */
     object-position: center;
     display: block;
     margin: 0 auto;
-    background-color: #ffffff;
-    border: 1px solid #ddd;
+    background-color: transparent;
     border-radius: 8px;
     padding: 20px;
     box-sizing: border-box;
@@ -412,7 +411,7 @@ nav .right a span { /* space between icon and text */
 
 .skills_picture_container span {
     font-size: 24px;
-    font-weight: bold;
+    font-weight: normal;
     color: var(--text-color);
     text-align: center;
     display: block;
@@ -425,6 +424,44 @@ nav .right a span { /* space between icon and text */
 }
 
 
+
+
+
+/* SECTION 5: Projects */
+
+#projects {
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    margin: 50px 0;
+    margin-bottom: 100px;
+}
+
+#projects h2 {
+    font-size: 65px;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    margin-top: -80px;
+    color: #9b4819;
+}
+
+#projects .text {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#projects .text p {
+    font-size: 18px;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
 
 
 
