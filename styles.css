@@ -240,56 +240,66 @@ nav .right a span { /* space between icon and text */
     color: #9b4819;
 }
 
-#background .picture_container {
+#background .picture_containers_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#background .picture_container_1,
+#background .picture_container_2,
+#background .picture_container_3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 100px;
-    max-width: 2000px;
-    margin: 0 auto; /* Center the container. Important */
+    margin: 0;
+    max-width: 350px;
+    flex: 1;
+    min-width: 300px;
 }
 
-#background .picture_container > div {
+#background .picture_container_1 > div,
+#background .picture_container_2 > div,
+#background .picture_container_3 > div {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 10px;
+    width: 320px;
+    min-height: 300px;
 }
 
-#background .picture_container img {
+#background .picture_container_1 img,
+#background .picture_container_2 img,
+#background .picture_container_3 img {
     width: 300px;
     height: 200px;
     object-fit: contain;
+    object-position: center;
     display: block;
     margin: 0 auto;
-    background-color: transparent;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
-#background .picture_container .Sacred-heart-background-images img {
-    width: 300px;
-    height: 200px;
-    object-fit: contain;
-}
-
-#background .picture_container .Jack-Welch-background-images img {
-    width: 300px;
-    height: 200px;
-    object-fit: contain;
-}
-
-#background .picture_container .NCAA-background-images img {
-    width: 300px;
-    height: 200px;
-    object-fit: contain;
-}
-
-#background .picture_container img:hover {
+#background .picture_container_1 img:hover,
+#background .picture_container_2 img:hover,
+#background .picture_container_3 img:hover {
     transform: scale(1.05);
     transition: .3s ease-in-out;
-}   
+}
 
-#background .picture_container span {
+#background .picture_container_1 span,
+#background .picture_container_2 span,
+#background .picture_container_3 span {
     font-size: 18px;
     color: var(--text-color);
     display: block;
@@ -297,18 +307,24 @@ nav .right a span { /* space between icon and text */
     font-style: italic;
 }
 
-#background .picture_container p {
+#background .picture_container_1 p,
+#background .picture_container_2 p,
+#background .picture_container_3 p {
     font-size: 14px;
     color: var(--text-color);
     margin-top: 5px;
 }
 
-#background .picture_container p span {
+#background .picture_container_1 p span,
+#background .picture_container_2 p span,
+#background .picture_container_3 p span {
     font-weight: normal;
     font-style: italic;
 }
 
-#background .picture_container .Title {
+#background .picture_container_1 .Title,
+#background .picture_container_2 .Title,
+#background .picture_container_3 .Title {
     font-size: 24px;
     font-weight: bold;
     color: var(--text-color);
