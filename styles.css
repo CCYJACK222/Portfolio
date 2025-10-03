@@ -244,7 +244,7 @@ nav .right a span { /* space between icon and text */
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 50px;
+    gap: 100px;
     flex-wrap: wrap;
     max-width: 1200px;
     margin: 0 auto;
@@ -269,7 +269,7 @@ nav .right a span { /* space between icon and text */
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 10px;
+    gap: 20px;
     width: 320px;
     min-height: 300px;
 }
@@ -312,26 +312,28 @@ nav .right a span { /* space between icon and text */
 #background .picture_container_3 p {
     font-size: 14px;
     color: var(--text-color);
-    margin-top: 5px;
+    margin-top: -5px;
 }
 
 #background .picture_container_1 p span,
 #background .picture_container_2 p span,
 #background .picture_container_3 p span {
-    font-weight: normal;
-    font-style: italic;
+    font-weight: bold;
+    font-style: normal;
 }
 
 #background .picture_container_1 .Title,
 #background .picture_container_2 .Title,
 #background .picture_container_3 .Title {
     font-size: 24px;
-    font-weight: bold;
+    font-weight: normal;
     color: var(--text-color);
     text-align: center;
     display: block;
     margin: 15px auto 10px auto;
     font-style: normal;
+    border-bottom: 2.5px solid #bd8f53;
+    padding-bottom: 15px;
 }
 
 
