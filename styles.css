@@ -465,6 +465,35 @@ nav .right a span { /* space between icon and text */
 
 
 
+/* SECTION 6: Contact */
+#contact {
+    background-color: #9b4819;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    margin: 50px 0;
+    margin-bottom: 100px;
+}
+
+
+
+#contact h2 {
+    font-size: 65px;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    margin-top: -80px;
+    color: #fcf5e7;
+}
+
+
+
+
+
 
 
 
