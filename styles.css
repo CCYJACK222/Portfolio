@@ -470,12 +470,13 @@ nav .right a span { /* space between icon and text */
     background-color: #9b4819;
     display: flex;
     flex-direction: column;
-    text-align: center;
+    text-align: left;
     justify-content: center;
-    align-items: center;
-    padding: 50px;
+    align-items: flex-start;
+    padding: 130px;
     margin: 50px 0;
     margin-bottom: 100px;
+    gap: 80px;
 }
 
 
@@ -486,18 +487,29 @@ nav .right a span { /* space between icon and text */
     font-style: normal;
     color: var(--text-color);
     margin-bottom: 10px;
-    margin-top: -80px;
+    margin-top: 80px;
     color: #fcf5e7;
+    text-decoration:underline;
 }
 
 
 #contact .text {
+    font-size: 21px;
     max-width: 800px;
     margin: 0 auto;
     padding: 0 20px;
+    color: #fcf5e7;
+    font-style: italic;
 }
 
-
+#contact .connect p {
+    font-size: 21px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    color: #fcf5e7;
+    font-style: italic;
+}
 
 
 
