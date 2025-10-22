@@ -1,5 +1,5 @@
 # Portfolio
-HTML, CSS, JavaScript
+HTML, CSS
 
 Jack Chow Personal Portfolio
 - Laptop user friendly
