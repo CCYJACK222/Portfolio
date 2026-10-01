@@ -730,3 +730,80 @@ section[id] {
     transition: none;
   }
 }
+
+.developer .hero h1 {
+  font-weight: 400;
+}
+
+.developer .hero h1 span {
+  font-style: italic;
+}
+
+.developer .section-heading h2 {
+  font-weight: 400;
+}
+
+.athlete .hero h1 {
+  text-transform: uppercase;
+  font-size: clamp(40px, 6.5vw, 80px);
+  letter-spacing: -0.045em;
+}
+
+.athlete .section-heading h2 {
+  letter-spacing: -0.04em;
+}
+
+/* Keep photos balanced beside the introduction */
+.hero-photo {
+  max-width: 360px;
+}
+
+.hero-photo img {
+  box-shadow: 0 18px 40px rgb(0 0 0 / 12%);
+}
+
+.developer .hero-photo img {
+  object-position: 40% 35%;
+}
+
+.athlete-photo img {
+  object-position: center;
+  border-color: var(--border);
+}
+
+/* Stack the introduction and photo on smaller screens */
+@media (max-width: 900px) {
+  .hero {
+    gap: 36px;
+  }
+
+  .hero-photo {
+    width: min(100%, 320px);
+    justify-self: center;
+  }
+}
+
+/* Tighten spacing on phones */
+@media (max-width: 600px) {
+  .hero {
+    padding: 48px 20px 64px;
+    gap: 32px;
+  }
+
+  .hero-photo {
+    width: min(100%, 280px);
+  }
+
+  .mode-switch {
+    max-width: 100%;
+  }
+
+  .mode-switch button {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  .education-card h3 {
+    font-size: 24px;
+  }
+}

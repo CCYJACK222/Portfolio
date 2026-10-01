@@ -18,12 +18,22 @@ body {
   min-height: 100svh;
 }
 
-.developer {
-  font-family: Georgia, serif;
+body {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.athlete {
+.developer h1,
+.developer h2,
+.developer h3,
+.developer .name {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.athlete h1,
+.athlete h2,
+.athlete h3 {
   font-family: Arial, Helvetica, sans-serif;
+  font-weight: 800;
 }
 
 button,
