@@ -1,11 +1,53 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import "./index.css";
 
 function App() {
   const [mode, setMode] = useState<"developer" | "athlete">("developer");
+  const mainRef = useRef<HTMLElement>(null);
 
   const isDeveloper = mode === "developer";
+
+  useEffect(() => {
+    const sections =
+      mainRef.current?.querySelectorAll<HTMLElement>("section:not(.hero)");
+
+    if (
+      !sections ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      !("IntersectionObserver" in window)
+    ) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0,
+        rootMargin: "0px 0px -40px 0px",
+      },
+    );
+
+    sections.forEach((section) => {
+      section.classList.add("reveal");
+      observer.observe(section);
+    });
+
+    return () => {
+      observer.disconnect();
+
+      sections.forEach((section) => {
+        section.classList.remove("reveal", "is-visible");
+      });
+    };
+  }, [mode]);
 
   return (
     <div className={`portfolio ${mode}`}>
@@ -33,9 +75,26 @@ function App() {
             ☾ Athlete
           </button>
         </div>
+        <nav className="section-nav" aria-label="Page sections">
+          {isDeveloper ? (
+            <>
+              <a href="#projects">Projects</a>
+              <a href="#experience">Experience</a>
+              <a href="#skills">Skills</a>
+              <a href="#education">Education</a>
+              <a href="#resume">Contact & Resume</a>
+            </>
+          ) : (
+            <>
+              <a href="#athlete-profile">Profile & Stats</a>
+              <a href="#highlights">Highlights</a>
+              <a href="#athlete-story">My Story</a>
+            </>
+          )}
+        </nav>
       </header>
 
-      <main id="home">
+      <main id="home" ref={mainRef}>
         <section className="hero" key={mode}>
           <div className="hero-copy">
             <p className="eyebrow">
@@ -78,17 +137,20 @@ function App() {
             </a>
           </div>
 
-          {isDeveloper && (
-            <div className="hero-photo">
-              <img
-                src={`${import.meta.env.BASE_URL}images/headshot.jpg`}
-                alt="Jack Chow"
-                width="4020"
-                height="6024"
-              />
-              <span>Builder on and off the court.</span>
-            </div>
-          )}
+          <div className={`hero-photo ${!isDeveloper ? "athlete-photo" : ""}`}>
+            <img
+              src={`${import.meta.env.BASE_URL}images/${
+                isDeveloper ? "headshot.jpg" : "volleyball.jpg"
+              }`}
+              alt={isDeveloper ? "Jack Chow" : "Jack Chow playing volleyball"}
+            />
+
+            <span>
+              {isDeveloper
+                ? "Builder on and off the court."
+                : "Sacred Heart University · Men’s Volleyball"}
+            </span>
+          </div>
         </section>
 
         {isDeveloper && (
@@ -235,6 +297,250 @@ function App() {
               </article>
             </div>
           </section>
+        )}
+        {isDeveloper && (
+          <>
+            <section className="skills-section" id="skills">
+              <div className="section-heading">
+                <p className="eyebrow">MY TOOLKIT</p>
+                <h2>Skills I build with.</h2>
+              </div>
+
+              <div className="skills-grid">
+                <article className="skill-group">
+                  <h3>Languages</h3>
+                  <ul className="tech-tags">
+                    <li>Python</li>
+                    <li>JavaScript</li>
+                    <li>TypeScript</li>
+                    <li>C</li>
+                    <li>SQL</li>
+                    <li>HTML / CSS</li>
+                  </ul>
+                </article>
+
+                <article className="skill-group">
+                  <h3>Frameworks & Libraries</h3>
+                  <ul className="tech-tags">
+                    <li>React</li>
+                    <li>React Native</li>
+                    <li>Expo</li>
+                    <li>Flask</li>
+                    <li>Pandas</li>
+                    <li>Electron</li>
+                  </ul>
+                </article>
+
+                <article className="skill-group">
+                  <h3>Databases & Tools</h3>
+                  <ul className="tech-tags">
+                    <li>Supabase</li>
+                    <li>PostgreSQL</li>
+                    <li>MySQL</li>
+                    <li>SQLite</li>
+                    <li>Git / GitHub</li>
+                    <li>Clerk</li>
+                  </ul>
+                </article>
+              </div>
+            </section>
+
+            <section className="education-section" id="education">
+              <div className="section-heading">
+                <p className="eyebrow">EDUCATION</p>
+                <h2>Where I'm growing.</h2>
+              </div>
+
+              <article className="education-card">
+                <div>
+                  <p className="education-date">2023 — 2027</p>
+                  <h3>Sacred Heart University</h3>
+                  <p>Bachelor of Science in Computer Science</p>
+                  <p className="education-detail">
+                    Mathematics minor · Fairfield, Connecticut
+                  </p>
+                </div>
+
+                <span className="education-badge">Class of 2027</span>
+              </article>
+            </section>
+
+            <section className="resume-section" id="resume">
+              <div>
+                <p className="eyebrow">LET'S CONNECT</p>
+                <h2>Want to know more?</h2>
+                <p>
+                  Get in touch to talk about my work, opportunities, or
+                  something we could build together.
+                </p>
+              </div>
+
+              <div className="resume-actions">
+                <a
+                  className="primary-link"
+                  href={`${import.meta.env.BASE_URL}resume.pdf`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View resume ↗
+                </a>
+                <a
+                  className="primary-link"
+                  href="mailto:jackchowpersonal@gmail.com"
+                >
+                  Email me ↗
+                </a>
+
+                <a
+                  className="text-link"
+                  href="https://www.linkedin.com/in/jack-chow-/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LinkedIn ↗
+                </a>
+              </div>
+            </section>
+          </>
+        )}
+
+        {!isDeveloper && (
+          <>
+            <section className="athlete-section" id="athlete-profile">
+              <div className="section-heading">
+                <p className="eyebrow">ON THE COURT</p>
+                <h2>Jack Chow. Outside hitter.</h2>
+                <p>
+                  NCAA Division I men's volleyball at Sacred Heart University.
+                  Bringing the same dedication to competition that I bring to
+                  building and learning.
+                </p>
+              </div>
+
+              <div className="athlete-stats">
+                <article className="stat-card">
+                  <p className="stat-value">6′3″</p>
+                  <h3>Height</h3>
+                  <p>190 cm</p>
+                </article>
+
+                <article className="stat-card">
+                  <p className="stat-value">11′4″</p>
+                  <h3>Jump reach</h3>
+                  <p>345 cm</p>
+                </article>
+
+                <article className="stat-card">
+                  <p className="stat-value">OH</p>
+                  <h3>Position</h3>
+                  <p>Outside hitter</p>
+                </article>
+
+                <article className="stat-card">
+                  <p className="stat-value">D1</p>
+                  <h3>Competition</h3>
+                  <p>NCAA Division I</p>
+                </article>
+              </div>
+
+              <p className="stats-note">
+                Height and jump reach recorded May 2026.
+              </p>
+            </section>
+            <section className="athlete-section" id="highlights">
+              <div className="section-heading">
+                <p className="eyebrow">GAME FOOTAGE</p>
+                <h2>See me in action.</h2>
+                <p>Volleyball highlights from the court.</p>
+              </div>
+
+              <div className="highlight-video">
+                <iframe
+                  src="https://www.youtube-nocookie.com/embed/vUd_rFI5ccY"
+                  title="Jack Chow volleyball highlights"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
+
+              <div className="video-links">
+                <a
+                  className="text-link"
+                  href="https://www.youtube.com/watch?v=vUd_rFI5ccY"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Watch on YouTube ↗
+                </a>
+
+                <a
+                  className="text-link"
+                  href="https://www.youtube.com/@jackchow6376"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  More videos on my channel ↗
+                </a>
+              </div>
+            </section>
+            <section className="athlete-section" id="athlete-story">
+              <div className="section-heading">
+                <p className="eyebrow">BEYOND THE NUMBERS</p>
+                <h2>More than the game.</h2>
+              </div>
+
+              <div className="athlete-values">
+                <article className="athlete-value">
+                  <span className="value-number">01</span>
+                  <h3>Discipline</h3>
+                  <p>
+                    Balancing training, competition, and a computer science
+                    degree takes consistent effort and a commitment to
+                    improving.
+                  </p>
+                </article>
+
+                <article className="athlete-value">
+                  <span className="value-number">02</span>
+                  <h3>Teamwork</h3>
+                  <p>
+                    Volleyball means communicating, trusting teammates, and
+                    working together toward a shared goal.
+                  </p>
+                </article>
+
+                <article className="athlete-value">
+                  <span className="value-number">03</span>
+                  <h3>Growth</h3>
+                  <p>
+                    Every practice and match is another opportunity to learn,
+                    adjust, and come back stronger.
+                  </p>
+                </article>
+              </div>
+            </section>
+
+            <section className="resume-section">
+              <div>
+                <p className="eyebrow">LET'S CONNECT</p>
+                <h2>Talk volleyball with me.</h2>
+                <p>
+                  Reach out to connect or learn more about my experience as a
+                  student athlete.
+                </p>
+              </div>
+
+              <div className="resume-actions">
+                <a
+                  className="primary-link"
+                  href="mailto:jackchowpersonal@gmail.com"
+                >
+                  Get in touch ↗
+                </a>
+              </div>
+            </section>
+          </>
         )}
       </main>
 
